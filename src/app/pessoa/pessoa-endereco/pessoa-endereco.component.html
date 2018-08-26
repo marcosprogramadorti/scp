@@ -1,0 +1,140 @@
+<form [formGroup]="enderecoForm">
+
+    <p-table [tableStyle]="{'table-layout':'auto'}" [scrollable]="false" [scrollable]="false" [columns]="colunas" [value]="lista"
+        selectionMode="single" [(selection)]="enderecoSelecionado" (onRowSelect)="selectEdicao($event)" [paginator]="false" [rows]="15">
+        <ng-template pTemplate="caption">
+            Lista de Endereços
+        </ng-template>
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                    {{col.header}}
+                    <p-sortIcon [field]="col.field"></p-sortIcon>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-linhaEndereco let-columns="columns">
+
+            <tr [pSelectableRow]="linhaEndereco">
+                <td>{{linhaEndereco?.nrCep}}</td>
+                <td>{{linhaEndereco?.tipoLogradouro?.nmTipoLogradouro}}</td>
+                <td>{{linhaEndereco?.localidade?.uf?.nmUf}}</td>
+                <td>{{linhaEndereco?.localidade?.nmLocalidade}}</td>
+                <td>{{linhaEndereco?.dsLogradouro}}</td>
+                <td>{{linhaEndereco?.nrLogradouro}}</td>
+                <td>{{linhaEndereco?.dsComplemento}}</td>
+                <td>{{linhaEndereco?.nmBairro}}</td>
+                <td>
+                    <div style="text-align:center">
+                        {{(linhaEndereco?.stPrincipal == 'S') ? 'Sim' : ''}}
+                    </div>
+                </td>
+
+                <td>
+                    <div style="text-align:center">
+                        <button type="button" pButton icon="fa fa-trash" (click)="deleta(linhaEndereco)"></button>&nbsp;&nbsp;
+                        <!-- <button type="button" pButton icon="fa fa-edit" (onRowSelect)="onRowSelect($event)"></button> -->
+                    </div>
+
+                </td>
+
+
+
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary" let-rowData>
+            <div style="text-align:left">
+                <button type="button" pButton icon="fa fa-plus" (click)="mostaraDialogoParaAdicionar()" label="Adicionar"></button>
+            </div>
+        </ng-template>
+    </p-table>
+    <p-dialog header="Endereço:" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [width]="1200">
+        <div class="ui-g ui-fluid" *ngIf="endereco">
+            <div class="ui-g-12">
+                <div class="ui-g-2 ui-fluid">
+                    <div class="ui-inputgroup ui-float-label">
+                        <p-inputMask formControlName="nrCep" [(ngModel)]="endereco.nrCep" mask="99.999-999"></p-inputMask>
+                        <label for="float-input">CEP(*)</label>
+                    </div>
+                    <p-message severity="error" [text]="enderecoForm.controls['nrCep'].errors['required'] ? 'Campo Obrigatório' : enderecoForm.controls['nrCep'].errors['pattern'] ? 'CEP inválido' : ''"
+                        *ngIf="!enderecoForm.controls['nrCep'].valid&&enderecoForm.controls['nrCep'].dirty"></p-message>
+                </div>
+                <div class="ui-g-1">
+                    <button pButton type="button" icon="fa fa-search" class="ui-button-warn" (click)="buscaLogradouroPorCEP(endereco.nrCep)"
+                        [disabled]="!enderecoForm.controls['nrCep'].valid"></button>
+                </div>
+                <div class="ui-g-3 ui-fluid">
+                    <div class="ui-inputgroup ui-float-label">
+                        <p-dropdown formControlName="tipoLogradouro" [autoWidth]="false" placeholder="&nbsp;" [options]="listaDeTiposDeLogradouros"
+                            [(ngModel)]="endereco.tipoLogradouro" optionLabel="nmTipoLogradouro" [filter]="true" filterBy="label,value.name"
+                            [disabled]="!pesquisaCEP || endereco.tipoLogradouro!=null"></p-dropdown>
+                        <label for="float-input">Tipo de Logradouro(*):</label>
+                    </div>
+                    <p-message severity="error" [text]="'Campo Obrigatório'" *ngIf="!enderecoForm.controls['tipoLogradouro'].valid&&enderecoForm.controls['tipoLogradouro'].dirty"></p-message>
+                </div>
+                <div class="ui-g-3 ui-fluid">
+                    <div class="ui-inputgroup ui-float-label">
+                        <p-dropdown formControlName="uf" [autoWidth]="false" [options]="listaDeUfs" [(ngModel)]="uf" optionLabel="sgUf" placeholder="&nbsp;"
+                            [filter]="true" filterBy="label,value.name" (onChange)="atualizaListaDeLocalidades()" [disabled]="!pesquisaCEP || uf!=null"></p-dropdown>
+                        <label for="float-input">UF(*):</label>
+                    </div>
+                </div>
+                <div class="ui-g-3 ui-fluid">
+                    <div class="ui-inputgroup ui-float-label">
+                        <p-dropdown formControlName="localidade" [autoWidth]="false" placeholder="&nbsp;" [options]="listaDeLocalidades" [(ngModel)]="endereco.localidade"
+                            optionLabel="nmLocalidade" [filter]="true" filterBy="label,value.name" [disabled]="!pesquisaCEP||endereco.localidade!=null"></p-dropdown>
+                        <label for="float-input">Cidade(*):</label>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-g-12">
+                <div class="ui-g-3 ui-fluid">
+                    <div class="ui-inputgroup, ui-float-label">
+                        <input id="disabled-input" type="text" pInputText placeholder="" formControlName="dsLogradouro" placeholder="" [(ngModel)]="endereco.dsLogradouro"
+                            [disabled]="!pesquisaCEP || endereco.dsLogradouro != null">
+                        <label for="float-input">Logradouro(*):</label>
+                        <p-message severity="error" [text]="'Campo Obrigatório'" *ngIf="!enderecoForm.controls['dsLogradouro'].valid&&enderecoForm.controls['dsLogradouro'].dirty"></p-message>
+                    </div>
+                </div>
+                <div class="ui-g-1 ui-fluid">
+                    <div class="ui-inputgroup, ui-float-label">
+                        <input type="text" pInputText placeholder="" formControlName="nrLogradouro" placeholder="" [(ngModel)]="endereco.nrLogradouro">
+                        <label for="float-input">Número:</label>
+                    </div>
+                </div>
+                <div class="ui-g-3 ui-fluid">
+                    <div class="ui-inputgroup, ui-float-label">
+                        <input type="text" pInputText placeholder="" formControlName="dsComplemento" placeholder="" [(ngModel)]="endereco.dsComplemento">
+                        <label for="float-input">Complemento:</label>
+                    </div>
+                </div>
+                <div class="ui-g-3 ui-fluid">
+                    <div class="ui-inputgroup, ui-float-label">
+                        <input type="text" pInputText placeholder="" formControlName="nmBairro" placeholder="" [(ngModel)]="endereco.nmBairro">
+                        <label for="float-input">Bairro:</label>
+                    </div>
+                </div>
+                <div class="ui-g-2 ui-fluid">
+                    <div class="ui-inputgroup">
+                        <label for="float-input">Principal(*):&nbsp;&nbsp;&nbsp;</label>
+                        <p-inputSwitch formControlName="stPrincipal" [ngModel]="retValorConvertidoStPrincipal()" (onChange)="handleChange($event)"
+                            [disabled]="!pesquisaCEP"></p-inputSwitch>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+        <p-footer>
+            <div class="ui-dialog-buttonpane ui-helper-clearfix">
+                <button type="button" pButton icon="fa fa-close" (click)="exclui()" label="Excluir"></button>
+                <button type="button" pButton icon="fa fa-check" (click)="salva()" label="Salvar" [disabled]="!enderecoForm.valid"></button>
+            </div>
+        </p-footer>
+    </p-dialog>
+
+</form>

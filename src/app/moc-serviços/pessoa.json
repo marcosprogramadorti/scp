@@ -1,0 +1,187 @@
+[
+    {
+        "id": 8091,
+        "dhCadastro": 1527206400000,
+        "dsInfoAdicional": null,
+        "nmPessoa": "Marcos Teste 3",
+        "stAtivo": "S",
+        "tpPessoa": "F",
+        "listaTipoVinculos": null,
+        "tipoVinculo": {
+            "id": 49,
+            "nmTipoVinculo": "SCPL",
+            "dsTipoVinculo": "Cadastro de Funcionário Empresa",
+            "stAtivo": "S",
+            "dhCadastro": 1526938046000,
+            "tpPessoa": "F",
+            "pessoas": []
+        },
+        "unidade": null,
+        "pessoaDocumentos": [],
+        "pessoaEmails": [
+            {
+                "id": 829,
+                "pessoa": null,
+                "dsEmail": "wesley.nascimento@transportes.gov.br",
+                "stPrincipal": "S",
+                "dhCadastro": 1472834279000
+            }
+        ],
+        "pessoaEnderecos": [
+            {
+                "id": 5189,
+                "localidade": {
+                    "id": 1778,
+                    "uf": {
+                        "id": 7,
+                        "regiao": {
+                            "id": 5,
+                            "pais": {
+                                "id": 31,
+                                "nmPais": "Brasil",
+                                "sgPais": "BRA",
+                                "dhCadastro": 1510047279000,
+                                "regioes": []
+                            },
+                            "nmRegiao": "Centro-Oeste",
+                            "dhCadastro": 1445365068000,
+                            "ufs": []
+                        },
+                        "nmUf": "Distrito Federal",
+                        "sgUf": "DF",
+                        "dhCadastro": 1445365068000,
+                        "localidades": []
+                    },
+                    "nmLocalidade": "Brasília",
+                    "dhCadastro": 1511355591000,
+                    "stAtivo": "S",
+                    "dsLocalidade": null,
+                    "pessoaEnderecos": []
+                },
+                "tipoLogradouro": {
+                    "id": 33,
+                    "nmTipoLogradouro": "Conjunto",
+                    "dsTipoLogradouro": null,
+                    "stAtivo": "S",
+                    "dhCadastro": 1445365068000,
+                    "pessoaEnderecos": []
+                },
+                "pessoa": null,
+                "tipoEndereco": {
+                    "id": 2,
+                    "nmTipoEndereco": "Comercial",
+                    "dsTipoEndereco": null,
+                    "stAtivo": "S",
+                    "dhCadastro": 1445365068000,
+                    "pessoaEnderecos": []
+                },
+                "nrCep": "71993310",
+                "nmBairro": "Setor Habitacional Arniqueira (Águas Claras)",
+                "dsLogradouro": "SHA Conjunto 2",
+                "nrLogradouro": "10",
+                "dsComplemento": "el shaday",
+                "stPrincipal": "N"
+            },
+            {
+                "id": 5190,
+                "localidade": {
+                    "id": 1778,
+                    "uf": {
+                        "id": 7,
+                        "regiao": {
+                            "id": 5,
+                            "pais": {
+                                "id": 31,
+                                "nmPais": "Brasil",
+                                "sgPais": "BRA",
+                                "dhCadastro": 1510047279000,
+                                "regioes": []
+                            },
+                            "nmRegiao": "Centro-Oeste",
+                            "dhCadastro": 1445365068000,
+                            "ufs": []
+                        },
+                        "nmUf": "Distrito Federal",
+                        "sgUf": "DF",
+                        "dhCadastro": 1445365068000,
+                        "localidades": []
+                    },
+                    "nmLocalidade": "Brasília",
+                    "dhCadastro": 1511355591000,
+                    "stAtivo": "S",
+                    "dsLocalidade": null,
+                    "pessoaEnderecos": []
+                },
+                "tipoLogradouro": {
+                    "id": 33,
+                    "nmTipoLogradouro": "Conjunto",
+                    "dsTipoLogradouro": null,
+                    "stAtivo": "S",
+                    "dhCadastro": 1445365068000,
+                    "pessoaEnderecos": []
+                },
+                "pessoa": null,
+                "tipoEndereco": {
+                    "id": 2,
+                    "nmTipoEndereco": "Comercial",
+                    "dsTipoEndereco": null,
+                    "stAtivo": "S",
+                    "dhCadastro": 1445365068000,
+                    "pessoaEnderecos": []
+                },
+                "nrCep": "71993310",
+                "nmBairro": "Setor Habitacional Arniqueira (Águas Claras)",
+                "dsLogradouro": "SHA Conjunto 2",
+                "nrLogradouro": "10",
+                "dsComplemento": "el shaday",
+                "stPrincipal": "S"
+            }
+        ],
+        "pessoaFisica": {
+            "id": 8091,
+            "dtNascimento": 327466800000,
+            "nrCpf": "29439347120",
+            "tpSexo": "M",
+            "nmMae": "Maria da Silva Souza",
+            "stNomeMae": "I",
+            "pessoa": null,
+            "dsCargo": null
+        },
+        "pessoaJuridica": null,
+        "pessoaTelefones": [
+            {
+                "id": 3255,
+                "tipoTelefone": {
+                    "id": 1,
+                    "nmTipoTelefone": "Celular",
+                    "dsTipoTelefone": null,
+                    "stAtivo": "S",
+                    "dhCadastro": 1445365068000,
+                    "pessoaTelefones": []
+                },
+                "pessoa": null,
+                "nrTelefone": "982887719",
+                "nrDdd": "61",
+                "stPrincipal": "S"
+            },
+            {
+                "id": 3256,
+                "tipoTelefone": {
+                    "id": 2,
+                    "nmTipoTelefone": "Comercial",
+                    "dsTipoTelefone": null,
+                    "stAtivo": "S",
+                    "dhCadastro": 1445365068000,
+                    "pessoaTelefones": []
+                },
+                "pessoa": null,
+                "nrTelefone": "982887720",
+                "nrDdd": "61",
+                "stPrincipal": "N"
+            }
+        ],
+        "idPessoaFisica": null,
+        "idPessoaJuridica": null,
+        "cdRecursoProprietario": null
+    }
+]

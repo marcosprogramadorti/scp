@@ -1,0 +1,95 @@
+<h3>
+  Pesquisar Pessoa</h3>
+<p-accordion [multiple]="true">
+  <p-accordionTab header="Pesquisar Pessoa">
+    <div class="ui-g">
+      <div class="ui-g-4 ui-fluid">
+        <label>Nome da Pessoa:</label>
+        <input id="float-input" type="text" size="30" [(ngModel)]="pessoa.nmPessoa" pInputText>
+      </div>
+      <div class="ui-g-4 ui-fluid">
+        <label>CPF:</label>
+        <p-inputMask [(ngModel)]="pessoaFisica.nrCpf" mask="999.999.999-99"></p-inputMask>
+      </div>
+      <div class="ui-g-4 ui-fluid">
+        <label>Ativo:</label>
+        <br>
+        <p-inputSwitch [(ngModel)]="ativo"></p-inputSwitch>
+      </div>
+
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-4 ui-fluid">
+        <label>Tipo de Pessoa:</label>
+        <br>
+        <p-radioButton name="groupname" value="todos" label="Todos" [(ngModel)]="tipoPessoa"></p-radioButton>&nbsp;&nbsp;&nbsp;
+        <p-radioButton name="groupname" value="fisica" label="Pessoa Fisíca" [(ngModel)]="tipoPessoa"></p-radioButton>&nbsp;&nbsp;&nbsp;
+        <p-radioButton name="groupname" value="juridica" label="Pessoa Jurídica" [(ngModel)]="tipoPessoa"></p-radioButton>
+      </div>
+      <div class="ui-g-4 ui-fluid">
+        <label>Tipo de Vínculo:</label>
+        <br>
+        <p-multiSelect [options]="listaDeTipoDeVinculo" [(ngModel)]="tipoDeVinculo" [panelStyle]="{minWidth:'12em'}"></p-multiSelect>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <button pButton type="button" icon="fa fa-search" label="Pesquisar"></button>&nbsp;&nbsp;&nbsp;
+        <button pButton type="button" icon="pi pi-check" label="Exportar" class="ui-button-info"></button>&nbsp;&nbsp;&nbsp;
+        <button pButton type="button" icon="fa fa-file" label="Novo" class="ui-button-success"></button>
+
+
+      </div>
+    </div>
+
+  </p-accordionTab>
+  <p-accordionTab header="Resultado">
+    <p-table [tableStyle]="{'table-layout':'auto'}" [scrollable]="false" [scrollable]="false" [columns]="colunas" [value]="lista"
+      selectionMode="single" [(selection)]="enderecoSelecionado" (onRowSelect)="selectEdicao($event)" [paginator]="false" [rows]="15">
+      <ng-template pTemplate="caption">
+        Lista de Pessoas
+      </ng-template>
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+            {{col.header}}
+            <p-sortIcon [field]="col.field"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-linhaPessoa let-columns="columns">
+
+        <tr [pSelectableRow]="linhaPessoa">
+            <td>
+                <div style="text-align:center">
+                  
+                  <button type="button" pButton icon="fa fa-edit" (onRowSelect)="onRowSelect($event)"></button> 
+                  <button type="button" pButton icon="fa fa-edit" (onRowSelect)="onRowSelect($event)"></button> 
+                  <button type="button" pButton icon="fa fa-trash" (click)="deleta(linhaEndereco)"></button>&nbsp;&nbsp;
+                  
+                </div>
+    
+              </td>
+          <td>{{linhaPessoa?.nmPessoa}}</td>
+          <td>{{linhaPessoa?.tipoLogradouro?.nmTipoLogradouro}}</td>
+          <td>{{linhaPessoa?.localidade?.uf?.nmUf}}</td>
+          <td>{{linhaPessoa?.localidade?.nmLocalidade}}</td>
+          <td>{{linhaPessoa?.stAtivo}}</td>
+          
+          
+
+          
+
+
+
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:left">
+          <button class="ui-button-success" type="button" pButton icon="fa fa-file" (click)="mostaraDialogoParaAdicionar()" label="Novo"></button>
+        </div>
+      </ng-template>
+    </p-table>
+
+  </p-accordionTab>
+</p-accordion>

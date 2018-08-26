@@ -1,0 +1,542 @@
+[
+    {
+        "id": 1,
+        "regiao": {
+            "id": 1,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Norte",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Acre",
+        "sgUf": "AC",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 2,
+        "regiao": {
+            "id": 2,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Nordeste",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Alagoas",
+        "sgUf": "AL",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 3,
+        "regiao": {
+            "id": 1,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Norte",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Amapá",
+        "sgUf": "AP",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 4,
+        "regiao": {
+            "id": 1,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Norte",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Amazonas",
+        "sgUf": "AM",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 5,
+        "regiao": {
+            "id": 2,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Nordeste",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Bahia",
+        "sgUf": "BA",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 6,
+        "regiao": {
+            "id": 2,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Nordeste",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Ceará",
+        "sgUf": "CE",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 7,
+        "regiao": {
+            "id": 5,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Centro-Oeste",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Distrito Federal",
+        "sgUf": "DF",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 8,
+        "regiao": {
+            "id": 4,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Sudeste",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Espírito Santo",
+        "sgUf": "ES",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 9,
+        "regiao": {
+            "id": 5,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Centro-Oeste",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Goiás",
+        "sgUf": "GO",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 10,
+        "regiao": {
+            "id": 2,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Nordeste",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Maranhão",
+        "sgUf": "MA",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 11,
+        "regiao": {
+            "id": 5,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Centro-Oeste",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Mato Grosso",
+        "sgUf": "MT",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 12,
+        "regiao": {
+            "id": 5,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Centro-Oeste",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Mato Grosso do Sul",
+        "sgUf": "MS",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 13,
+        "regiao": {
+            "id": 4,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Sudeste",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Minas Gerais",
+        "sgUf": "MG",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 16,
+        "regiao": {
+            "id": 3,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Sul",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Paraná",
+        "sgUf": "PR",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 15,
+        "regiao": {
+            "id": 2,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Nordeste",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Paraíba",
+        "sgUf": "PB",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 14,
+        "regiao": {
+            "id": 1,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Norte",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Pará",
+        "sgUf": "PA",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 17,
+        "regiao": {
+            "id": 2,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Nordeste",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Pernambuco",
+        "sgUf": "PE",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 18,
+        "regiao": {
+            "id": 2,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Nordeste",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Piauí",
+        "sgUf": "PI",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 20,
+        "regiao": {
+            "id": 2,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Nordeste",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Rio Grande do Norte",
+        "sgUf": "RN",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 21,
+        "regiao": {
+            "id": 3,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Sul",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Rio Grande do Sul",
+        "sgUf": "RS",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 19,
+        "regiao": {
+            "id": 4,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Sudeste",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Rio de Janeiro",
+        "sgUf": "RJ",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 22,
+        "regiao": {
+            "id": 1,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Norte",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Rondônia",
+        "sgUf": "RO",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 23,
+        "regiao": {
+            "id": 1,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Norte",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Roraima",
+        "sgUf": "RR",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 24,
+        "regiao": {
+            "id": 5,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Centro-Oeste",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Santa Catarina",
+        "sgUf": "SC",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 26,
+        "regiao": {
+            "id": 2,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Nordeste",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Sergipe",
+        "sgUf": "SE",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 25,
+        "regiao": {
+            "id": 4,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Sudeste",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "São Paulo",
+        "sgUf": "SP",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    },
+    {
+        "id": 27,
+        "regiao": {
+            "id": 1,
+            "pais": {
+                "id": 31,
+                "nmPais": "Brasil",
+                "sgPais": "BRA",
+                "dhCadastro": 1510047279000,
+                "regioes": []
+            },
+            "nmRegiao": "Norte",
+            "dhCadastro": 1445365068000,
+            "ufs": []
+        },
+        "nmUf": "Tocantins",
+        "sgUf": "TO",
+        "dhCadastro": 1445365068000,
+        "localidades": []
+    }
+]

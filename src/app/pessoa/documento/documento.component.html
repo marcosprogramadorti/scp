@@ -1,0 +1,64 @@
+<form [formGroup]="docForm" (ngSubmit)="onSubmit(userform.value)">
+<p-table [value]="lista" selectionMode="single" [(selection)]="pessoaDocumentoSelecionada">
+  <ng-template pTemplate="caption">
+    Lista de Documentos
+  </ng-template>
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th>Tipo Documento</th>
+      <th>Número Documento</th>
+      <th>Controle</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-documento let-columns="columns">
+    <tr>
+      <td>{{documento.tipoDocumento?.nmTipoDocumento}}</td>
+      <td>{{documento.nrDocumento}}</td>
+      <td>
+        <div style="text-align:center">
+          <button type="button" pButton icon="fa fa-trash" (click)="deleta(documento)"></button>&nbsp;&nbsp;
+          <button type="button" pButton icon="fa fa-edit" (click)="edita(documento)"></button>
+        </div>
+        
+      </td>
+
+    </tr>
+
+  </ng-template>
+  <ng-template pTemplate="summary" let-rowData>
+    <div style="text-align:left">
+      <button type="button" pButton icon="fa fa-plus" (click)="mostaraDialogoParaAdicionar()" label="Adicionar"></button>
+    </div>
+  </ng-template>
+</p-table>
+
+<p-dialog header="Documento" [(visible)]="mostraDialogo" [responsive]="true" showEffect="fade" [modal]="true" [width]="auto">
+  <div class="ui-g ui-fluid" *ngIf="pessoaDocumento">
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="vin">Tipo Documento</label>
+      </div>
+      <div class="ui-g-8">
+        <p-dropdown formControlName="tipoDocumento" [autoWidth]="false" [options]="listaTipoDocumento" [(ngModel)]="pessoaDocumento.tipoDocumento" optionLabel="nmTipoDocumento"
+          [filter]="true" filterBy="label,value.name"></p-dropdown>
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="year">Numero</label>
+      </div>
+      <div class="ui-g-8">
+        <input formControlName="nrDocumento" pInputText id="year" [(ngModel)]="pessoaDocumento.nrDocumento" />
+      </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+  </div>
+  <p-footer>
+    <div class="ui-dialog-buttonpane ui-helper-clearfix">
+      <button type="button" pButton icon="fa fa-close" (click)="deleta(pessoaDocumento)" label="Excluir"></button>
+      <button type="button" pButton icon="fa fa-check" (click)="salva()" label="Salva"></button>
+    </div>
+  </p-footer>
+</p-dialog>
+
+</form>

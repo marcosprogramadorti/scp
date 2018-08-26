@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1778,
+        "uf": {
+            "id": 7,
+            "regiao": {
+                "id": 5,
+                "pais": {
+                    "id": 31,
+                    "nmPais": "Brasil",
+                    "sgPais": "BRA",
+                    "dhCadastro": 1510047279000,
+                    "regioes": []
+                },
+                "nmRegiao": "Centro-Oeste",
+                "dhCadastro": 1445365068000,
+                "ufs": []
+            },
+            "nmUf": "Distrito Federal",
+            "sgUf": "DF",
+            "dhCadastro": 1445365068000,
+            "localidades": []
+        },
+        "nmLocalidade": "Brasília",
+        "dhCadastro": 1511355591000,
+        "stAtivo": "S",
+        "dsLocalidade": null,
+        "pessoaEnderecos": []
+    }
+]

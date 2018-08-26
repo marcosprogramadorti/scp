@@ -1,0 +1,158 @@
+<p-toast [style]="{marginTop: '80px'}"></p-toast>
+<form [formGroup]="pessoaForm" (ngSubmit)="onSubmit(pessoaForm.value)">
+<div class="ui-g">
+  <div class="ui-g-12">
+    <h3>Formulário Pessoa</h3>
+  </div>
+</div>
+
+<div class="ui-g">
+  {{pessoaFisica |json}}
+  <div class="ui-g-12">
+    <p-accordion [multiple]="true" expandIcon="pi pi-fw pi-caret-right">
+      <p-accordionTab header="Dados Pessoas" class="ui-button-success">
+
+        <div class="ui-g">
+          <div class="ui-g-2">
+            <div class="ui-inputgroup ui-float-label">
+              <input type="text" formControlName="nrCpf" pInputText placeholder="" class="ui-fluid" [(ngModel)]="pessoaFisica.nrCpf" >
+              <label for="float-input">CPF(*):</label>
+              <button pButton type="button" icon="fa fa-search" class="ui-button-warn" (click)="buscarPessoaPorCpf(pessoaFisica.nrCpf)" ></button>
+            </div>
+          </div>
+          <div class="ui-g-10 ui-fluid">
+            <div class="ui-inputgroup, ui-float-label">
+              <input type="text" formControlName="nmPessoa" pInputText placeholder="" [(ngModel)]="pessoa.nmPessoa" >
+              <label for="float-input">Nome da Pessoa(*):</label>
+            </div>
+          </div>
+        </div>
+        <div class="ui-g">
+
+          <div class="ui-g-3 ui-fluid">
+            <div class="ui-inputgroup ui-float-label">
+              <p-calendar dateFormat="dd/mm/yy" [(ngModel)]="dtNascimento" formControlName="dtNascimento"></p-calendar>
+              <label for="float-input">Data de Nascimento:</label>
+            </div>
+          </div>
+          <div class="ui-g-3 ui-fluid">
+            <div class="ui-inputgroup ui-float-label">
+              <div class="ui-inputgroup ui-float-label">
+                <p-dropdown  formControlName="naturalidade" [autoWidth]="false" [options]="ufs" [(ngModel)]="pessoaFisica.naturalidade" optionLabel="nome" [filter]="true" filterBy="label,value.name"  ></p-dropdown>
+                <label for="float-input">Naturalidade:</label>
+              </div>
+            </div>
+          </div>
+          <div class="ui-g-3 ui-fluid">
+            <div class="ui-inputgroup, ui-float-label">
+              <div class="ui-inputgroup ui-float-label">
+                <p-dropdown formControlName="nacionalidade" [autoWidth]="false" [options]="paises" [(ngModel)]="detalhePessoaFisica.nacionalidade" optionLabel="gentilico" [filter]="true" filterBy="label,value.name"></p-dropdown>
+                <label for="float-input">Nacionalidade:</label>
+              </div>
+            </div>
+          </div>
+          <div class="ui-g-3 ui-fluid">
+            <div class="ui-inputgroup ui-float-label">
+              <p-calendar dateFormat="dd/mm/yy" formControlName="dtChegadaBrasil" [(ngModel)]="detalhePessoaFisica.dtChegadaBrasil"></p-calendar>
+              <label for="float-input">Data Chegada no Brasil:</label>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="ui-g">
+
+          <div class="ui-g-4 ui-fluid">
+            <div class="ui-inputgroup, ui-float-label">
+              <input type="text" pInputText placeholder="">
+              <label for="float-input">Cargo:</label>
+            </div>
+          </div>
+
+          <div class="ui-g-4 ui-fluid">
+            <div class="ui-inputgroup ui-float-label">
+              <p-dropdown formControlName="tpEstadoCivil" [autoWidth]="false" [autoWidth]="false" [options]="listaDeEstadosCivis" [(ngModel)]="pessoaFisica.tpEstadoCivil" optionLabel="estado_civil"
+                [filter]="true" filterBy="label,value.name"></p-dropdown>
+              <label for="float-input">Estado Civil:</label>
+            </div>
+
+          </div>
+          <div class="ui-g-4 ui-fluid">
+            <div class="ui-inputgroup, ui-float-label">
+              <p-dropdown formControlName="tpRegimeCasamento" [autoWidth]="false" [options]="listaDeRegimesDeCasamento" [(ngModel)]="detalhePessoaFisica.tpRegimeCasamento" optionLabel="nome" [filter]="true"
+                filterBy="label,value.name"></p-dropdown>
+              <label for="float-input">Regime de Casamento:</label>
+            </div>
+          </div>
+
+        </div>
+
+      </p-accordionTab>
+      <p-accordionTab header="Documentos">
+        <!-- <div class="ui-g">
+          <div class="ui-g-6 ui-fluid">
+            <div class="ui-inputgroup, ui-float-label">
+              <p-dropdown [autoWidth]="false" [options]="regimeCasamento" [(ngModel)]="selectedCity1" optionLabel="nome" [filter]="true"
+                filterBy="label,value.name"></p-dropdown>
+              <label for="float-input">Tipo de Documentos(*):</label>
+            </div>
+          </div>
+          <div class="ui-g-5 ui-fluid">
+              <div class="ui-inputgroup, ui-float-label">
+                <input type="text" pInputText placeholder="">
+                <label for="float-input">Numero do Documento(*):</label>
+              </div>
+            </div>
+            <div class="ui-g-1" >
+                <p-button label="" icon="fa fa-check" iconPos="left" class="ui-button-secondary" ></p-button>
+            </div>
+        </div> -->
+        <div class="ui-g">
+            <div class="ui-g-12">
+              <app-documento></app-documento>
+            </div>
+        </div>
+      </p-accordionTab>
+     
+      <p-accordionTab header="Endereço">
+          <div class="ui-g">
+              <div class="ui-g-12">
+                <app-pessoa-endereco [lista]="pessoaEnderecos" ></app-pessoa-endereco>
+              </div>
+          </div>
+      </p-accordionTab>
+
+      <p-accordionTab header="Telefones">
+          <div class="ui-g">
+              <div class="ui-g-12">
+                <!-- <app-telefone [lista]="pessoaTelefones" (respostaTelefones)="reciverFeedback($event)" ></app-telefone> -->
+                <app-telefone [lista]="pessoaTelefones" ></app-telefone>
+              </div>
+          </div>
+      </p-accordionTab>
+      <p-accordionTab header="E-mail">
+        <div class="ui-g">
+            <div class="ui-g-12">
+
+              <app-email [lista]="pessoaEmails" ></app-email>
+            </div>
+        </div>
+    </p-accordionTab>
+
+
+    </p-accordion>
+
+      
+
+  </div>
+</div>
+
+<div class="ui-g">
+  <div class="ui-g-12" >
+      <p-button label="Salvar" icon="fa fa-check" iconPos="left" class="ui-button-secondary" type="submit"></p-button>
+  </div>
+
+
+
+</div>
+</form>

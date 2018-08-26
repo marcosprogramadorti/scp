@@ -1,0 +1,96 @@
+{
+    "id": 3649958,
+    "dhCadastro": -61280496000000,
+    "dsInfoAdicional": null,
+    "nmPessoa": "Thiago e Emilly Gráfica Ltda",
+    "stAtivo": "S",
+    "tpPessoa": "J",
+    "listaTipoVinculos": null,
+    "tipoVinculo": {
+        "id": 49,
+        "nmTipoVinculo": "SCPL",
+        "dsTipoVinculo": "Cadastro de Funcionário Empresa",
+        "stAtivo": "S",
+        "dhCadastro": 1526938046000,
+        "tpPessoa": "F",
+        "pessoas": []
+    },
+    "unidade": null,
+    "pessoaDocumentos": [],
+    "pessoaEmails": [
+        {
+            "id": 4699,
+            "pessoa": null,
+            "dsEmail": "fiscal@thiagoeemillygraficaltda.com.br",
+            "stPrincipal": "S",
+            "dhCadastro": 1534958555000
+        }
+    ],
+    "pessoaEnderecos": [
+        {
+            "id": 5567,
+            "localidade": {
+                "id": 9668,
+                "uf": {
+                    "id": 25,
+                    "regiao": {
+                        "id": 4,
+                        "pais": {
+                            "id": 31,
+                            "nmPais": "Brasil",
+                            "sgPais": "BRA",
+                            "dhCadastro": 1510047279000,
+                            "regioes": []
+                        },
+                        "nmRegiao": "Sudeste",
+                        "dhCadastro": 1445365068000,
+                        "ufs": []
+                    },
+                    "nmUf": "São Paulo",
+                    "sgUf": "SP",
+                    "dhCadastro": 1445365068000,
+                    "localidades": []
+                },
+                "nmLocalidade": "São Paulo",
+                "dhCadastro": 1511362791000,
+                "stAtivo": "S",
+                "dsLocalidade": null,
+                "pessoaEnderecos": []
+            },
+            "tipoLogradouro": {
+                "id": 106,
+                "nmTipoLogradouro": "Rua",
+                "dsTipoLogradouro": null,
+                "stAtivo": "S",
+                "dhCadastro": 1445365068000,
+                "pessoaEnderecos": []
+            },
+            "pessoa": null,
+            "tipoEndereco": {
+                "id": 2,
+                "nmTipoEndereco": "Comercial",
+                "dsTipoEndereco": null,
+                "stAtivo": "S",
+                "dhCadastro": 1445365068000,
+                "pessoaEnderecos": []
+            },
+            "nrCep": "02881050",
+            "nmBairro": "Vila Francos",
+            "dsLogradouro": "Professor Manoel Nogueira Padilha Sobrinho",
+            "nrLogradouro": "10",
+            "dsComplemento": null,
+            "stPrincipal": "S"
+        }
+    ],
+    "pessoaFisica": null,
+    "pessoaJuridica": {
+        "id": 3649958,
+        "nmRazaoSocial": "Thiago e Emilly Gráfica Ltda",
+        "nrCnpj": "52897708000190",
+        "pessoa": null
+    },
+    "pessoaTelefones": [],
+    "idPessoaFisica": null,
+    "idPessoaJuridica": null,
+    "cdRecursoProprietario": null
+}

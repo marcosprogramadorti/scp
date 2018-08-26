@@ -1,0 +1,13 @@
+{
+    "listaDeRegimesDeCasamento": [
+        {
+            "nome": "Comunhão universal de bens"
+        },
+        {
+            "nome": "Comunhão parcial de bens"
+        },
+        {
+            "nome": "Separação de bens"
+        }
+    ]
+}

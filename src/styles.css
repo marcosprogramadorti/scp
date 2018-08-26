@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+/*fonte do tema*/
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif,Arial, Helvetica;
+    color: #404c51;
+}
+label{
+    font-weight: bold;
+}
+
+/* Corrreção link do accordion */
+.ui-accordion .ui-accordion-header a { text-decoration : none !important; }
+.ui-accordion .ui-accordion-content {
+    padding: 2px;
+}
+.ui-message-error{
+    background-color: #f8b7bd;
+}
+.ui-button-success{
+    background-color: limegreen !important;
+    border: 1px solid limegreen !important;
+}
+.ui-button-info{
+    background-color: lightskyblue !important;
+    border: 1px solid lightskyblue !important;
+}
+
+.ui-datatable table { table-layout: auto !important; }
+

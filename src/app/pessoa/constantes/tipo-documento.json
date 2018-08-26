@@ -1,0 +1,9 @@
+[
+{"id":1, "nmTipoDocumento": "Carteira de trabalho"},
+{"id":2, "nmTipoDocumento":	"Certidão de Alistamento Militar"},
+{"id":3, "nmTipoDocumento":	"Certidão de casamento"},
+{"id":4, "nmTipoDocumento":	"Certidão de Nascimento"},
+{"id":5, "nmTipoDocumento":	"Registro Geral"},
+{"id":6, "nmTipoDocumento":	"Título de eleitor"},
+{"id":7, "nmTipoDocumento":	"Carteira Nacional de Habilitação"}
+]
