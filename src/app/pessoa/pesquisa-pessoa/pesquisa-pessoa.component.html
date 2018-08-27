@@ -1,7 +1,7 @@
 <h3>
   Pesquisar Pessoa</h3>
-<p-accordion [multiple]="true">
-  <p-accordionTab header="Pesquisar Pessoa">
+<p-accordion [multiple]="true" >
+  <p-accordionTab header="Pesquisar Pessoa" [selected]="true" >
     <div class="ui-g">
       <div class="ui-g-4 ui-fluid">
         <label>Nome da Pessoa:</label>
@@ -29,7 +29,7 @@
       <div class="ui-g-4 ui-fluid">
         <label>Tipo de Vínculo:</label>
         <br>
-        <p-multiSelect [options]="listaDeTipoDeVinculo" [(ngModel)]="tipoDeVinculo" [panelStyle]="{minWidth:'12em'}"></p-multiSelect>
+        <p-multiSelect placeholder="Escolha tipo de Vínculo" [options]="listaDeTipoDeVinculo" [(ngModel)]="tipoDeVinculo" [panelStyle]="{minWidth:'12em'}"></p-multiSelect>
       </div>
     </div>
     <div class="ui-g">
@@ -43,7 +43,7 @@
     </div>
 
   </p-accordionTab>
-  <p-accordionTab header="Resultado">
+  <p-accordionTab header="Resultado" [selected]="true">
     <p-table [tableStyle]="{'table-layout':'auto'}" [scrollable]="false" [scrollable]="false" [columns]="colunas" [value]="lista"
       selectionMode="single" [(selection)]="enderecoSelecionado" (onRowSelect)="selectEdicao($event)" [paginator]="false" [rows]="15">
       <ng-template pTemplate="caption">
