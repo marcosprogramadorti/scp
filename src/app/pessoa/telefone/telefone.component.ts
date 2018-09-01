@@ -1,11 +1,11 @@
 
 import { TipoDocumento } from './../interfaces/TipoDocumento';
-import { TipoTelefone } from './../interfaces/TipoTelefone';
+import { TipoTelefone } from './../dominios/TipoTelefone';
 
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {Validators,FormControl,FormGroup,FormBuilder} from '@angular/forms';
 
-import { PessoaTelefone } from './../interfaces/PessoaTelefone';
+import { PessoaTelefone } from './../dominios/PessoaTelefone';
 
 import {MessageService} from 'primeng/api';
 import { PessoaService } from './../pessoa.service';
@@ -28,10 +28,10 @@ export class TelefoneComponent implements OnInit {
   displayDialog: boolean;
   telefoneSelecionado: PessoaTelefone = <PessoaTelefone>{};
  
-  @Output() respostaTelefones = new EventEmitter();
+  @Output() emissor = new EventEmitter();
 
   
-  text:string = 'teste legal';
+  
   
  
 
@@ -50,26 +50,10 @@ export class TelefoneComponent implements OnInit {
       { field: 'controle', header: 'Controle' }
     ];
 
-    let telefone = <PessoaTelefone>{};
-    let telefone2 = <PessoaTelefone>{};
-    let tipoTelefone = <TipoTelefone>{};
+  
 
-    tipoTelefone.id = 1;
-    tipoTelefone.nmTipoTelefone = 'Celular';
 
-    telefone.id = 1;
-    telefone.nrDdd = 61;
-    telefone.nrTelefone = 982887719;
-    telefone.tipoTelefone = tipoTelefone;
-    telefone.stPrincipal = 'N';
-    //this.lista.push(telefone);
-    telefone2.id = 2;
-    telefone2.nrDdd = 61;
-    telefone2.nrTelefone = 984721513;
-    telefone2.tipoTelefone = tipoTelefone;
-    telefone2.stPrincipal = 'S';
-    //this.lista.push(telefone2);
-
+    
     this.telForm = this.fb.group({
       
       
@@ -77,10 +61,12 @@ export class TelefoneComponent implements OnInit {
       'nrDdd': new FormControl('', Validators.compose([Validators.required, Validators.pattern('[1-9]{2}')])),
       'nrTelefone': new FormControl('', Validators.compose([Validators.required, Validators.minLength(8),Validators.maxLength(10)])),
       'tipoTelefone': new FormControl('', Validators.required),
-      'stPrincipalTelefone': new FormControl('', Validators.required) 
+      'stPrincipal': new FormControl('') 
       
       
   });
+  
+
 
 
 
@@ -91,6 +77,8 @@ export class TelefoneComponent implements OnInit {
     this.telefone = <PessoaTelefone>{};
     this.displayDialog = true;
     this.telefone.tipoTelefone = this.tipoTelefonePadrao;
+    this.telefone.stPrincipal = "S";
+    
   }
 
   salva() {
@@ -110,7 +98,7 @@ export class TelefoneComponent implements OnInit {
     this.lista = lista;
     this.telefone = null;
     this.displayDialog = false;
-    this.respostaTelefones.emit(this.lista);
+    this.emissor.emit(this.lista);
     
   }
 
@@ -142,7 +130,7 @@ export class TelefoneComponent implements OnInit {
     this.lista = this.lista.filter((val, i) => i != index);
     this.telefone = null;
     this.displayDialog = false;
-    this.respostaTelefones.emit(this.lista);
+    this.emissor.emit(this.lista);
   }
 
   selectEdicao(event) {
@@ -164,7 +152,7 @@ export class TelefoneComponent implements OnInit {
     this.lista = this.lista.filter((val, i) => i != index);
     this.telefone = null;
     this.displayDialog = false;
-    this.respostaTelefones.emit(this.lista);
+    this.emissor.emit(this.lista);
   }
   
   

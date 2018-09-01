@@ -1,18 +1,18 @@
 {"listaDeEstadosCivis":
     [        {
-            "estado_civil": "Solteiro (a)"
+            "estadoCivil": "Solteiro (a)","tpEstadoCivil":"S"
         },
         {
-            "estado_civil": "Casado (a)"
+            "estadoCivil": "Casado (a)","tpEstadoCivil":"C"
         },
         {
-            "estado_civil": "Divorciado (a)"
+            "estadoCivil": "Divorciado (a)","tpEstadoCivil":"D"
         },
         {
-            "estado_civil": "Viúvo (a)"
+            "estadoCivil": "Viúvo (a)","tpEstadoCivil":"V"
         },
         {
-            "estado_civil": "União Estável"
+            "estadoCivil": "União Estável","tpEstadoCivil":"U"
         }
     ]
 }

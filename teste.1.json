@@ -1,0 +1,49 @@
+{
+    "localidade": {
+        "id": 2361,
+        "uf": {
+            "id": 9,
+            "regiao": {
+                "id": 5,
+                "pais": {
+                    "id": 31,
+                    "nmPais": "Brasil",
+                    "sgPais": "BRA",
+                    "dhCadastro": 1510047279000,
+                    "regioes": []
+                },
+                "nmRegiao": "Centro-Oeste",
+                "dhCadastro": 1445365068000,
+                "ufs": []
+            },
+            "nmUf": "Goiás",
+            "sgUf": "GO",
+            "dhCadastro": 1445365068000,
+            "localidades": []
+        },
+        "nmLocalidade": "Valparaíso de Goiás",
+        "dhCadastro": 1511362791000,
+        "stAtivo": "S",
+        "dsLocalidade": null,
+        "pessoaEnderecos": []
+    },
+    "tipoLogradouro": {
+        "id": 93,
+        "nmTipoLogradouro": "Quadra",
+        "dsTipoLogradouro": null,
+        "stAtivo": "S",
+        "dhCadastro": 1445365068000,
+        "pessoaEnderecos": []
+    },
+    "nrCep": "72876005",
+    "nmBairro": "Valparaiso I - Etapa A",
+    "dsLogradouro": "Quadra 2",
+    "nrLogradouro": "61",
+    "dsComplemento": "Vila do do Sol ",
+    "pessoa": {
+        "id": 8091
+    },
+    "tipoEndereco": {
+        "id": 2
+    }
+}

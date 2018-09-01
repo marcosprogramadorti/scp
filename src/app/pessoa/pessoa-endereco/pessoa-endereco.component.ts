@@ -26,8 +26,8 @@ export class PessoaEnderecoComponent implements OnInit {
 
   enderecoForm: FormGroup;
 
-  @Input() lista =  new Array;
-  lista2: PessoaEndereco[] = [];
+  @Input() lista:  PessoaEndereco[] = [];
+   
   
   
 
@@ -48,8 +48,6 @@ export class PessoaEnderecoComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.lista);
-    console.log(this.lista2);
     
 
     this.ps.retornaListaDeTiposDeLogradouros()
@@ -68,16 +66,16 @@ export class PessoaEnderecoComponent implements OnInit {
 
 
     this.colunas = [
-      { field: 'nrCep', header: 'CEP (*)',width: 300 },
-      { field: 'tipoLogradouro', header: 'Tipo de  Logradouro (*)',width: 100 },
-      { field: 'uf', header: 'UF' ,width: 20},
-      { field: 'localidade', header: 'Cidade',width: 100 },
-      { field: 'dsLogradouro', header: 'Logradouro' ,width: 100},
-      { field: 'nrLogradouro', header: 'Número' ,width: 50},
-      { field: 'dsComplemento', header: 'Complemento' ,width: 80},
-      { field: 'nmBairro', header: 'Bairro' ,width: 80},
-      { field: 'principal', header: 'Principal' ,width: 50},
-      { field: 'controle', header: 'Controle' ,width: 60 }
+      { field: 'nrCep', header: 'CEP (*)' },
+      { field: 'tipoLogradouro', header: 'Tipo de  Logradouro (*)' },
+      { field: 'uf', header: 'UF' },
+      { field: 'localidade', header: 'Cidade' },
+      { field: 'dsLogradouro', header: 'Logradouro' },
+      { field: 'nrLogradouro', header: 'Número' },
+      { field: 'dsComplemento', header: 'Complemento' },
+      { field: 'nmBairro', header: 'Bairro' },
+      { field: 'principal', header: 'Principal' },
+      { field: 'controle', header: 'Controle' }
     ];
 
     this.enderecoForm = this.fb.group({
@@ -118,8 +116,8 @@ export class PessoaEnderecoComponent implements OnInit {
   salva() {
     let lista = this.lista;
     if (this.endereco.stPrincipal == "S") {
-      lista.forEach((tel, i) => {
-        tel.stPrincipal = "N";
+      lista.forEach((endereco, i) => {
+        endereco.stPrincipal = "N";
       });
     }
     if (this.enderecoNovo)
@@ -230,7 +228,7 @@ export class PessoaEnderecoComponent implements OnInit {
             this.atualizaListaDeLocalidades();
             this.endereco.localidade = localidade;
             this.endereco.tipoLogradouro = this.tipoDeLogradouroPorid(logradouro.idTipoLogradouro);
-            this.endereco.logradouro = logradouro;
+            //this.endereco.logradouro = logradouro;
 
             this.pesquisaCEP = true;
             this.verBloqueioCampo();

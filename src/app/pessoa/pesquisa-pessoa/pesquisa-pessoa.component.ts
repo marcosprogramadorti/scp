@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pesquisa-pessoa.component.css']
 })
 export class PesquisaPessoaComponent implements OnInit {
+  
   pessoa:Pessoa = <Pessoa>{};
   pessoaFisica:PessoaFisica = <PessoaFisica>{};
   ativo:boolean = true;

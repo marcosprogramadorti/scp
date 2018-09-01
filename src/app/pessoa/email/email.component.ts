@@ -19,7 +19,8 @@ export class EmailComponent implements OnInit {
   displayDialog: boolean;
   emailSelecionado: PessoaEmail = <PessoaEmail>{};
  
-  @Output() respostaEmails = new EventEmitter();
+  @Output() emissor = new EventEmitter();
+  
 
   
   
@@ -47,6 +48,7 @@ export class EmailComponent implements OnInit {
     this.emailNovo = true;
     this.email = <PessoaEmail>{};
     this.displayDialog = true;
+    this.email.stPrincipal = "S";
   }
 
   salva() {
@@ -66,7 +68,7 @@ export class EmailComponent implements OnInit {
     this.lista = lista;
     this.email = null;
     this.displayDialog = false;
-    this.respostaEmails.emit(this.lista);
+    this.emissor.emit(this.lista);
     
   }
 
@@ -98,7 +100,7 @@ export class EmailComponent implements OnInit {
     this.lista = this.lista.filter((val, i) => i != index);
     this.email = null;
     this.displayDialog = false;
-    this.respostaEmails.emit(this.lista);
+    this.emissor.emit(this.lista);
   }
 
   selectEdicao(event) {
@@ -120,7 +122,7 @@ export class EmailComponent implements OnInit {
     this.lista = this.lista.filter((val, i) => i != index);
     this.email = null;
     this.displayDialog = false;
-    this.respostaEmails.emit(this.lista);
+    this.emissor.emit(this.lista);
   }
 
 }

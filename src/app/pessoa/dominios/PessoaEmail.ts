@@ -6,4 +6,5 @@ export class PessoaEmail
     dsEmail: string;
     stPrincipal: string;
     dhCadastro: Date;
+    constructor (){ this.stPrincipal="S"}
 }

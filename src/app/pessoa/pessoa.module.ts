@@ -18,7 +18,7 @@ import {CalendarModule} from 'primeng/calendar';
 import {DropdownModule} from 'primeng/dropdown';
 import {TabViewModule} from 'primeng/tabview';
 import {ToastModule} from 'primeng/toast';
-//import {CodeHighlighterModule} from 'primeng/codeHighlighter';
+import {CodeHighlighterModule} from 'primeng/codeHighlighter';
 import {TableModule} from 'primeng/table';
 import {DialogModule} from 'primeng/dialog';
 import {InputSwitchModule} from 'primeng/inputswitch';
@@ -26,6 +26,7 @@ import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import {InputMaskModule} from 'primeng/inputmask';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 import {MultiSelectModule} from 'primeng/multiselect';
 
 
@@ -39,7 +40,9 @@ import { DocumentoComponent } from './documento/documento.component';
 import { TelefoneComponent } from './telefone/telefone.component';
 import { PessoaEnderecoComponent } from './pessoa-endereco/pessoa-endereco.component';
 import { EmailComponent } from './email/email.component';
+import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { PesquisaPessoaComponent } from './pesquisa-pessoa/pesquisa-pessoa.component';
+
 
 
 
@@ -58,7 +61,7 @@ import { PesquisaPessoaComponent } from './pesquisa-pessoa/pesquisa-pessoa.compo
     DropdownModule,
     TabViewModule,
     ToastModule,
-  //  CodeHighlighterModule,
+    CodeHighlighterModule,
     TableModule,
     BrowserAnimationsModule,
     DialogModule,
@@ -69,16 +72,18 @@ import { PesquisaPessoaComponent } from './pesquisa-pessoa/pesquisa-pessoa.compo
     MessageModule,
     AutoCompleteModule,
     InputMaskModule,
+    InputTextareaModule,
     MultiSelectModule
     
     
     
     
   ],
-  declarations: [FormPessoaComponent, DocumentoComponent, TelefoneComponent, PessoaEnderecoComponent, EmailComponent, PesquisaPessoaComponent],
+  declarations: [FormPessoaComponent,  DocumentoComponent, TelefoneComponent, PessoaEnderecoComponent, EmailComponent, ExperienciaComponent, PesquisaPessoaComponent ],
   exports: [
     FormPessoaComponent,
     PesquisaPessoaComponent
+    
     
   ]
 })

@@ -1,6 +1,6 @@
 import { PessoaService } from './../pessoa.service';
 
-import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit,Input,Output, EventEmitter } from '@angular/core';
 import {Validators,FormControl,FormGroup,FormBuilder} from '@angular/forms';
 
 import { PessoaDocumento } from './../interfaces/PessoaDocumento';
@@ -13,14 +13,17 @@ import { TipoDocumento } from './../interfaces/TipoDocumento';
 })
 export class DocumentoComponent implements OnInit {
 
-  
+  @Output() emissor = new EventEmitter();
+
+  @Input() lista: PessoaDocumento[] = [];
   listaTipoDocumento: TipoDocumento[] = <TipoDocumento[]>[];
+  
   mostraDialogo: boolean;
   pessoaDocumento: PessoaDocumento = <PessoaDocumento>{};
   tipoDocumento: TipoDocumento = <TipoDocumento>{};
   pessoaDocumentoSelecionada: PessoaDocumento = <PessoaDocumento>{};
   novaPessoaDocumento: boolean;
-  lista: PessoaDocumento[] = [];
+  
   colunas: any[];
 
   public docForm: FormGroup;
@@ -30,6 +33,7 @@ export class DocumentoComponent implements OnInit {
   ngOnInit() {  
 
     this.listaTipoDocumento = this.ps.retornaListaDeTiposDeDocumentos();
+
     this.docForm = this.fb.group({
       
       'tipoDocumento': new FormControl('', Validators.required),
@@ -58,6 +62,7 @@ export class DocumentoComponent implements OnInit {
 
     this.pessoaDocumento = null;
     this.mostraDialogo = false;
+    this.emissor.emit(this.lista);
 
 
   }
@@ -67,12 +72,14 @@ export class DocumentoComponent implements OnInit {
     this.lista = this.lista.filter((val, i) => i != index);
     this.pessoaDocumento = null;
     this.mostraDialogo = false;
+    this.emissor.emit(this.lista);
   }
   edita(documento) {
     
     this.pessoaDocumentoSelecionada = documento;
     this.pessoaDocumento = documento;
     this.mostraDialogo = true;
+    this.emissor.emit(this.lista);
   }
 
   

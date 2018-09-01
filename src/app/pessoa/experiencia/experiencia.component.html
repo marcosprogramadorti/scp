@@ -1,0 +1,81 @@
+<form [formGroup]="experienciaForm" >
+  
+  <p-table [columns]="colunas" [value]="lista" selectionMode="single" [(selection)]="experienciaSelecionado" (onRowSelect)="selectEdicao($event)" [paginator]="false" [rows]="15" responsive="true" >
+      <ng-template pTemplate="caption">
+          Lista de Experiências Profissionais
+      </ng-template>
+      <ng-template pTemplate="header" let-columns>
+          <tr>
+              <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                  {{col.header}}
+                  <p-sortIcon [field]="col.field"></p-sortIcon>
+              </th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-linhaExperiencia let-columns="columns">
+          
+          <tr [pSelectableRow]="linhaExperiencia" >
+              <td>{{linhaExperiencia?.nmEmpresa}}</td>
+              <td>{{linhaExperiencia?.nmCargo}}</td>
+              <td>{{linhaExperiencia?.dtInicioCargo | date:'dd/MM/yyyy' }}</td>
+              <td>{{linhaExperiencia?.dtFimCargo | date:'dd/MM/yyyy' }}</td>
+              <td>
+                <div style="text-align:center">
+                  <button type="button" pButton icon="fa fa-trash" (click)="deleta(linhaExperiencia)"></button>&nbsp;&nbsp;
+                </div>
+                
+              </td>
+           </tr>
+      </ng-template>
+      <ng-template pTemplate="summary" let-rowData>
+          <div style="text-align:left">
+              <button type="button" pButton icon="fa fa-plus" (click)="mostaraDialogoParaAdicionar()" label="Adicionar"></button>
+          </div>
+      </ng-template>    
+  </p-table>
+  <p-dialog header="Experiências Profissionais:" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [width]="1200">
+      <div class="ui-g ui-fluid" *ngIf="experiencia">
+          <div class="ui-g-12">
+              <div class="ui-g-3 ui-fluid">
+                  <div class="ui-inputgroup, ui-float-label">
+                      <input  id="disabled-input" type="text" pInputText placeholder="" formControlName="nmEmpresa" placeholder="" [(ngModel)]="experiencia.nmEmpresa"  >
+                      <label for="float-input">Empresa(*):</label>
+                      <p-message severity="error" [text]="'Campo Obrigatório'"  *ngIf="!experienciaForm.controls['nmEmpresa'].valid&&experienciaForm.controls['nmEmpresa'].dirty"  ></p-message>
+                  </div>
+              </div>    
+              <div class="ui-g-3 ui-fluid">
+                <div class="ui-inputgroup, ui-float-label">
+                  <input  id="disabled-input" type="text" pInputText placeholder="" formControlName="nmCargo" placeholder="" [(ngModel)]="experiencia.nmCargo"  >
+                  <label for="float-input">Cargo(*):</label>
+                  <p-message severity="error" [text]="'Campo Obrigatório'"  *ngIf="!experienciaForm.controls['nmCargo'].valid&&experienciaForm.controls['nmCargo'].dirty"  ></p-message>
+                </div>
+               </div>
+               <div class="ui-g-3 ui-fluid">
+                  <div class="ui-inputgroup, ui-float-label">
+                      <p-calendar dateFormat="dd/mm/yy" formControlName="dtInicioCargo" [(ngModel)]="experiencia.dtInicioCargo"></p-calendar>
+                    <label for="float-input">De(*):</label>
+                    <p-message severity="error" [text]="'Campo Obrigatório'"  *ngIf="!experienciaForm.controls['dtInicioCargo'].valid&&experienciaForm.controls['dtInicioCargo'].dirty"  ></p-message>
+                  </div>
+                 </div>
+                 <div class="ui-g-3 ui-fluid">
+                    <div class="ui-inputgroup, ui-float-label">
+                        <p-calendar dateFormat="dd/mm/yy" formControlName="dtFimCargo" [(ngModel)]="experiencia.dtFimCargo"></p-calendar>
+                      <label for="float-input">Até(*):</label>
+                      <p-message severity="error" [text]="'Campo Obrigatório'"  *ngIf="!experienciaForm.controls['dtFimCargo'].valid&&experienciaForm.controls['dtFimCargo'].dirty"  ></p-message>
+                    </div>
+                   </div>
+          </div>
+          
+          
+          
+
+
+      </div>
+      <p-footer>
+          <div class="ui-dialog-buttonpane ui-helper-clearfix">
+              <button type="button" pButton icon="fa fa-close" (click)="exclui()" label="Excluir"></button>
+              <button type="button" pButton icon="fa fa-check" (click)="salva()" label="Salvar" [disabled]="!experienciaForm.valid" ></button>
+          </div>
+      </p-footer>
+  </p-dialog>
+  </form>

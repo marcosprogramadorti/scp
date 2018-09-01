@@ -9,4 +9,5 @@ export class PessoaFisica{
     nmMae:string;
     stNomeMae:string;
     naturalidade:Localidade;
+    tpEstadoCivil:string;
 }

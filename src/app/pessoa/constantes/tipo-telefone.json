@@ -1,20 +1,6 @@
-{
-    "listaDeTiposDeTelefones": [
-        {
-            "id": 1,
-            "nmTipoTelefone": "Celular"
-        },
-        {
-            "id": 2,
-            "nmTipoTelefone": "Comercial"
-        },
-        {
-            "id": 3,
-            "nmTipoTelefone": "Fax"
-        },
-        {
-            "id": 4,
-            "nmTipoTelefone": "Residencial"
-        }
-    ]
-}
+{"listaDeTiposDeTelefones":[
+{"id":1,	"nmTipoTelefone":"Celular"},
+{"id":2,	"nmTipoTelefone":"Comercial"},
+{"id":3,	"nmTipoTelefone":"Fax"},
+{"id":4,	"nmTipoTelefone":"Residencial"}
+]}

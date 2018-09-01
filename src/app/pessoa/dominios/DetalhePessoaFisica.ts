@@ -1,12 +1,16 @@
+import { ExperienciaProfissional } from './ExperienciaProfissional';
 import { Pais } from './../interfaces/Pais';
 import { Pessoa } from './Pessoa';
 
 export class DetalhePessoaFisica{
 
-    stEstrangeiro:number;
-    pessoa: Pessoa;
-    nacionalidade:Pais;
-    tpRegimeCasamento: string;
-    stAtivo: string;
+    id:number; /*id pessoa*/
+    idPaisNacionalidade:number;
+    tpRegimeCasamento:string;
     dtChegadaBrasil:Date;
+    dsInformacaoAdicional:string;
+    stAtivo:string;
+    experienciasProfissionais:ExperienciaProfissional[];
+    
+
 }

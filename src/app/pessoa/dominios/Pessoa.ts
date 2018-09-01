@@ -1,8 +1,8 @@
-import { PessoaTelefone } from './../interfaces/PessoaTelefone';
+import { PessoaTelefone } from './../dominios/PessoaTelefone';
 import { PessoaJuridica } from './PessoaJuridica';
 import { PessoaFisica } from './PessoaFisica';
 import { PessoaEndereco } from './PessoaEndereco';
-import { PessoaEmail } from './PessoaEmail';
+import { PessoaEmail } from './pessoaEmail';
 import { PessoaDocumento } from './../interfaces/PessoaDocumento';
 import { Unidade } from './Unidade';
 import { TipoVinculo } from './TipoVinculo';

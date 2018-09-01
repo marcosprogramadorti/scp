@@ -1,3 +1,7 @@
+import { ExperienciaProfissional } from './dominios/ExperienciaProfissional';
+import { PaisSC } from './dominios/PaisSC';
+import { Pais } from './interfaces/Pais';
+import { DetalhePessoaFisica } from './dominios/DetalhePessoaFisica';
 import { Pessoa } from './dominios/Pessoa';
 import { Logradouro } from './dominios/Logradouro';
 import { Localidade } from './dominios/Localidade';
@@ -12,8 +16,9 @@ import * as fileEstadoCivil from './constantes/estado-civil.json';
 import * as filePais from './constantes/pais.json';
 import * as fileUFs from './constantes/ufs.json';
 import * as fileRegimeCasamento from './constantes/regime-casamento.json';
-import * as fileTipoTelefone from './constantes/tipo-telefone.json';
+import * as fileTipoTelefone from  './constantes/tipo-telefone.json';
 import * as fileTipoDocumento from './constantes/tipo-documento.json';
+
 
 import { TipoLogradouro } from './dominios/TipoLograduro';
 import { Uf } from './dominios/Uf';
@@ -47,6 +52,8 @@ export class PessoaService {
     return headers;
   }
 
+  
+
   retornaLocalidadePorId(id) :Observable<Localidade> {
     return this.http.get<Localidade>('http://localhost:8080/suiteCorporativa/localidadePorId/'+id);
   }
@@ -73,6 +80,12 @@ export class PessoaService {
     });
   }
 
+  buscarPorIdDetalhePessoaFisica(id:number) :Observable<DetalhePessoaFisica> {
+    return this.http.get<DetalhePessoaFisica>('http://localhost:8080/detalhePessoaFisica/'+id);
+  }
+  buscarPorIdExperienciaProfissional(id:number) :Observable<ExperienciaProfissional> {
+    return this.http.get<ExperienciaProfissional>('http://localhost:8080/experienciaProfissional/'+id);
+  }
   buscarPessoaPorCpf(cpf:string) :Observable<Pessoa[]> {
     return this.http.get<Pessoa[]>('http://localhost:8080/suiteCorporativa/pessoas/buscarPessoaPorCpf/'+cpf);
   }
@@ -89,9 +102,14 @@ export class PessoaService {
   retornaListaDeEstadosCivis() {
     return this.listaDeEstadosCivis;
   } 
-  retornaListaDePais(){
+  
+  retornaListaDePaises(){
     return this.listaDePais;
   } 
+  retornaListaDePaisesSC() :Observable<PaisSC[]> {
+    return this.http.get<PaisSC[]>('http://localhost:8080/paisNacionalidade/paises');
+  }
+  
   retornaListaDeUFs(){
     return this.listaDeUFs;
   }
@@ -104,6 +122,22 @@ export class PessoaService {
   }
   retornaListaDeTiposDeDocumentos(){
     return this.listaDeTiposDeDocumentos;
+  }
+
+  salvarOuAtualizarPessoa(pessoa:Pessoa) : Observable<Pessoa>  {
+    return this.http.post<Pessoa>('http://localhost:8080/suiteCorporativa/pessoas/salvarOuAtualizar',pessoa, {
+      headers  : this.getHeaders()
+    });
+  }
+  salvarOuAtualizarExperienciaProfissional(experienciaProfissional:ExperienciaProfissional) : Observable<ExperienciaProfissional>  {
+    return this.http.post<ExperienciaProfissional>('http://localhost:8080/experienciaProfissional',experienciaProfissional, {
+      headers  : this.getHeaders()
+    });
+  }
+  salvarOuAtualizarDetalhePessoaFisica(detalhePessoaFisica:DetalhePessoaFisica) : Observable<DetalhePessoaFisica>  {
+    return this.http.post<DetalhePessoaFisica>('http://localhost:8080/detalhePessoaFisica',detalhePessoaFisica, {
+      headers  : this.getHeaders()
+    });
   }
 
   salvaPessoaSCP( ){

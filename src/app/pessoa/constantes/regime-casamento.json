@@ -1,13 +1,20 @@
 {
     "listaDeRegimesDeCasamento": [
         {
-            "nome": "Comunhão universal de bens"
+            "nmRegimeCasamento": "Participação final nos aquestos","tpRegimeCasamento":"F"
         },
         {
-            "nome": "Comunhão parcial de bens"
+            "nmRegimeCasamento": "Separação obrigatória de bens","tpRegimeCasamento":"O"
         },
         {
-            "nome": "Separação de bens"
+            "nmRegimeCasamento": "Separação total/convencional de bens","tpRegimeCasamento":"T"
+        },
+        {
+            "nmRegimeCasamento": "Comunhão universal de bens","tpRegimeCasamento":"U"
+        },
+        {
+            "nmRegimeCasamento": "Comunhão parcial de bens","tpRegimeCasamento":"P"
         }
     ]
 }
+

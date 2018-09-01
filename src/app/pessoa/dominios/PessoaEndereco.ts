@@ -1,4 +1,3 @@
-import { Logradouro } from './Logradouro';
 import { TipoLogradouro } from './TipoLograduro';
 import { Pessoa } from './Pessoa';
 import { TipoEndereco } from './TipoEndereco';
@@ -14,6 +13,7 @@ export class PessoaEndereco{
     tipoEndereco: TipoEndereco;
     stPrincipal:string;
     pessoa: Pessoa;
-    tipoLogradouro:TipoLogradouro;
-    logradouro:Logradouro;
+    tipoLogradouro:TipoLogradouro;  
+    constructor (){ this.stPrincipal="S"}
+    
 }
