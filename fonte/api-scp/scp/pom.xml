@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>br.gov.transportes</groupId>
+	<artifactId>api-scp</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
+	<name>api-scp</name>
+	<description>Sistema de Controle de Projeto</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.0.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		
+		<!-- Inicio dos Adicionados para SSO -->
+		 
+		 <version.servidor.sso>1.1.0</version.servidor.sso>
+		  <jhipster.server.version>1.1.9</jhipster.server.version>
+		  <jjwt.version>0.7.0</jjwt.version>
+		  
+		 <!-- Fim dos Adicionados para SSO -->
+		 
+	</properties>
+
+	<dependencies>
+	<!-- Inicio dos Adicionados para SSO -->
+	<dependency>
+	    <groupId>log4j</groupId>
+	    <artifactId>log4j</artifactId>
+	    <version>1.2.17</version>
+	</dependency>
+
+	<dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-data</artifactId>
+     </dependency>
+	<dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>${jjwt.version}</version>
+    </dependency>
+	<dependency>
+            <groupId>io.github.jhipster</groupId>
+            <artifactId>jhipster</artifactId>
+            <version>${jhipster.server.version}</version>
+     </dependency>
+	 <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>LATEST</version>
+     </dependency>
+	<dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-cas</artifactId>
+    </dependency>
+	<dependency>
+            <groupId>org.jasig.cas.client</groupId>
+            <artifactId>cas-client-core</artifactId>
+            <version>3.4.1</version>
+    </dependency>	
+	<dependency>
+            <groupId>br.com.basis.gedai</groupId>
+            <artifactId>servidor</artifactId>
+            <version>${version.servidor.sso}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>smartgwtpower</artifactId>
+                    <groupId>com.isomorphic</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>smartgwt-skins</artifactId>
+                    <groupId>com.isomorphic</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>smartgwt</artifactId>
+                    <groupId>com.isomorphic</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>mail</artifactId>
+                    <groupId>javax.mail</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>gedai-crypto</artifactId>
+                    <groupId>br.com.basis.gedai</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>activemq-core</artifactId>
+                    <groupId>org.apache.activemq</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-log4j12</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>gson</artifactId>
+                    <groupId>com.google.code.gson</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>log4j</artifactId>
+                    <groupId>log4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>componentes</artifactId>
+                    <groupId>br.com.basis</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>compartilhado</artifactId>
+                    <groupId>br.com.basis.gedai</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>log-auditoria-producer</artifactId>
+                    <groupId>br.com.basis.gedai</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>basis-data</artifactId>
+                    <groupId>br.com.basis</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>core-rpc</artifactId>
+                    <groupId>com.isomorphic</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>sql</artifactId>
+                    <groupId>com.isomorphic</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>servlet-api</artifactId>
+                    <groupId>javax.servlet</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-security-cas-client</artifactId>
+                    <groupId>org.springframework.security</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>	
+	
+	<!-- fim dos adicionados para asso -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0.4</version>
+        </dependency>
+		        <dependency>
+		        	<groupId>org.springframework.boot</groupId>
+		        	<artifactId>
+		        		spring-boot-configuration-processor
+		        	</artifactId>
+		        	<optional>true</optional>
+		        </dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
