@@ -27,7 +27,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(schema="BD_SCP",  name = "TB_DETALHE_PESSOA_FISICA")
-@SequenceGenerator(name = "SQ_DETALHE_PESSOA_FISICA", sequenceName = "SQ_DETALHE_PESSOA_FISICA", allocationSize = 1)
+//@SequenceGenerator(name = "SQ_DETALHE_PESSOA_FISICA", sequenceName = "SQ_DETALHE_PESSOA_FISICA", allocationSize = 1)
 public class DetalhePessoaFisica implements Serializable {
 
 	/**
@@ -37,7 +37,7 @@ public class DetalhePessoaFisica implements Serializable {
 	private static final long serialVersionUID = -4145316646830626641L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_DETALHE_PESSOA_FISICA")
+	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_DETALHE_PESSOA_FISICA")
 	@Column(name = "ID_PESSOA")
 	private Long id;
 	
@@ -57,11 +57,14 @@ public class DetalhePessoaFisica implements Serializable {
 	@Column(name = "DS_INFORMACAO_ADICIONAL")
 	private String dsInformacaoAdicional;
 	
+	@OneToOne
+	@JoinColumn(name="ID_PESSOA")
+	private Pessoa pessoa;
 	
 	//@OneToMany(mappedBy = "detalhePessoaFisica", cascade = CascadeType.ALL, orphanRemoval = true)
 	@OneToMany(mappedBy = "idPessoa", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<ExperienciaProfissional> experienciasProfissionais;  
-	
+	private List<ExperienciaProfissional> experienciasProfissionais;
+
 	public Long getId() {
 		return id;
 	}
@@ -70,7 +73,6 @@ public class DetalhePessoaFisica implements Serializable {
 		this.id = id;
 	}
 
-	
 	public Long getIdPaisNacionalidade() {
 		return idPaisNacionalidade;
 	}
@@ -110,8 +112,14 @@ public class DetalhePessoaFisica implements Serializable {
 	public void setDsInformacaoAdicional(String dsInformacaoAdicional) {
 		this.dsInformacaoAdicional = dsInformacaoAdicional;
 	}
-	
-	
+
+	public Pessoa getPessoa() {
+		return pessoa;
+	}
+
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
+	}
 
 	public List<ExperienciaProfissional> getExperienciasProfissionais() {
 		return experienciasProfissionais;
@@ -123,10 +131,14 @@ public class DetalhePessoaFisica implements Serializable {
 
 	@Override
 	public String toString() {
-		return "DetalhePessoaFisica [id=" + id + ", idPaisNacionalidade="
-				+ idPaisNacionalidade + ", tpRegimeCasamento=" + tpRegimeCasamento + ", stAtivo=" + stAtivo
-				+ ", dtChegadaBrasil=" + dtChegadaBrasil + ", dsInformacaoAdicional=" + dsInformacaoAdicional + "]";
+		return "DetalhePessoaFisica [id=" + id + ", idPaisNacionalidade=" + idPaisNacionalidade + ", tpRegimeCasamento="
+				+ tpRegimeCasamento + ", stAtivo=" + stAtivo + ", dtChegadaBrasil=" + dtChegadaBrasil
+				+ ", dsInformacaoAdicional=" + dsInformacaoAdicional + ", pessoa=" + pessoa
+				+ ", experienciasProfissionais=" + experienciasProfissionais + "]";
 	}
+
+	
+	
 	
 	
 	

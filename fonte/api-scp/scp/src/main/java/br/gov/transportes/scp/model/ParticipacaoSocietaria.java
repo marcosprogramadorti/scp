@@ -47,7 +47,7 @@ public class ParticipacaoSocietaria implements Serializable {
 	private Float peAcaoOrdinaria;
 	
 	@Column(name = "QT_ACAO_PREFERENCIAL")
-	private Float qtAcaoPreferrencial;
+	private Float qtAcaoPreferencial;
 	
 	@Column(name = "PE_ACAO_PREFERENCIAL")
 	private Float peAcaoPreferencial;
@@ -57,6 +57,10 @@ public class ParticipacaoSocietaria implements Serializable {
 	
 	@Column(name = "PE_ACAO_VOTO")
 	private Float peAcaoVoto;
+	
+	@OneToOne()
+	@JoinColumn(name = "ID_UF")
+	private Uf uf;
 
 	public Long getId() {
 		return id;
@@ -106,12 +110,12 @@ public class ParticipacaoSocietaria implements Serializable {
 		this.peAcaoOrdinaria = peAcaoOrdinaria;
 	}
 
-	public Float getQtAcaoPreferrencial() {
-		return qtAcaoPreferrencial;
+	public Float getQtAcaoPreferencial() {
+		return qtAcaoPreferencial;
 	}
 
-	public void setQtAcaoPreferrencial(Float qtAcaoPreferrencial) {
-		this.qtAcaoPreferrencial = qtAcaoPreferrencial;
+	public void setQtAcaoPreferencial(Float qtAcaoPreferrencial) {
+		this.qtAcaoPreferencial = qtAcaoPreferrencial;
 	}
 
 	public Float getPeAcaoPreferencial() {
@@ -136,6 +140,14 @@ public class ParticipacaoSocietaria implements Serializable {
 
 	public void setPeAcaoVoto(Float peAcaoVoto) {
 		this.peAcaoVoto = peAcaoVoto;
+	}
+
+	public Uf getUf() {
+		return uf;
+	}
+
+	public void setUf(Uf uf) {
+		this.uf = uf;
 	}
 
 	

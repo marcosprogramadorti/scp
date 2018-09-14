@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(schema="BD_SCP",  name = "TB_DIRETORIA")
-@SequenceGenerator(schema="BD_SCP" ,name = "TB_DIRETORIA_ID_GENERATOR", sequenceName = "BD_SCP.ID_DIRETORIA", allocationSize = 1)
+@SequenceGenerator(schema="BD_SCP" ,name = "TB_DIRETORIA_ID_GENERATOR", sequenceName = "SQ_DIRETORIA", allocationSize = 1)
 public class Diretoria implements Serializable {
 
 	
@@ -44,7 +44,7 @@ public class Diretoria implements Serializable {
 	
 	@OneToOne()
 	@JoinColumn( name="ID_PESSOA_DIRETOR")
-	private Pessoa pessoaDiretoria;
+	private DetalhePessoaFisica pessoaDiretoria;
 	
 	@Column(name = "NM_CARGO")
 	private String nmCargo;
@@ -71,11 +71,11 @@ public class Diretoria implements Serializable {
 		this.idDetalhePessoaJuridica = idDetalhePessoaJuridica;
 	}
 
-	public Pessoa getPessoaDiretoria() {
+	public DetalhePessoaFisica getPessoaDiretoria() {
 		return pessoaDiretoria;
 	}
 
-	public void setPessoaDiretoria(Pessoa pessoaDiretoria) {
+	public void setPessoaDiretoria(DetalhePessoaFisica pessoaDiretoria) {
 		this.pessoaDiretoria = pessoaDiretoria;
 	}
 

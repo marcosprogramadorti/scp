@@ -1,24 +1,16 @@
 package br.gov.transportes.scp.model;
 
 import java.io.Serializable;
-import java.util.Date;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
-import br.gov.transportes.scp.repository.pessoasuitecorporativa.negocio.to.PessoaFisicaTO;
-import br.gov.transportes.scp.repository.pessoasuitecorporativa.negocio.to.PessoaJuridicaTO;
 
 
 @Entity
@@ -44,9 +36,18 @@ public class Pessoa implements Serializable {
 	@JoinColumn(name="ID_PESSOA")
 	private PessoaFisica pessoaFisica;
 	
+	@JsonIgnore
 	@OneToOne()
 	@JoinColumn(name="ID_PESSOA")
 	private PessoaJuridica pessoaJuridica;
+	
+	@JsonIgnore
+	@OneToOne()
+	@JoinColumn(name="ID_PESSOA")
+	private DetalhePessoaFisica detalhePessoaFisica;
+	
+	@Column(name="TP_PESSOA")
+	private String tpPessoa;
 
 	public Long getId() {
 		return id;
@@ -79,6 +80,24 @@ public class Pessoa implements Serializable {
 	public void setPessoaJuridica(PessoaJuridica pessoaJuridica) {
 		this.pessoaJuridica = pessoaJuridica;
 	}
+
+	public DetalhePessoaFisica getDetalhePessoaFisica() {
+		return detalhePessoaFisica;
+	}
+
+	public void setDetalhePessoaFisica(DetalhePessoaFisica detalhePessoaFisica) {
+		this.detalhePessoaFisica = detalhePessoaFisica;
+	}
+
+	public String getTpPessoa() {
+		return tpPessoa;
+	}
+
+	public void setTpPessoa(String tpPessoa) {
+		this.tpPessoa = tpPessoa;
+	}
+
+	
 
 	
 	

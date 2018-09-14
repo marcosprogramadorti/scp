@@ -8,22 +8,13 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
+
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
+
 import javax.persistence.Table;
 
-import org.hibernate.action.internal.OrphanRemovalAction;
-import org.hibernate.annotations.Cascade;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
 @Entity
@@ -44,8 +35,8 @@ public class DetalhePessoaJuridica implements Serializable {
 	@Column(name = "NR_INSCRICAO_ESTADUAL")
 	private Long nrInscricaoEstadual;
 	
-	@Column(name = "SG_POSTULANTE")
-	private String sgPostulante;
+	@Column(name = "SG_PESSOA_JURIDICA")
+	private String sgPessoaJuridica;
 	
 	@Column(name = "TP_FORMA_JURIDICA")
 	private String tpFormaJuridica;
@@ -53,11 +44,11 @@ public class DetalhePessoaJuridica implements Serializable {
 	@Column(name = "DT_REGISTRO")
 	private Date dtRegistro;
 	
-	@Column(name = "NR_PRAZO_DURACAO")
-	private BigDecimal nrPrazoDuracao;
+	@Column(name = "DS_PRAZO_DURACAO")
+	private String dsPrazoDuracao;
 	
 	@Column(name = "VL_CAPITAL_SOCIAL")
-	private BigDecimal vlCapitalSocila;
+	private BigDecimal vlCapitalSocial;
 	
 	@Column(name = "DT_ULTIMA_ATUALIZACAO")
 	private Date dtUltimaAtualizacao;
@@ -85,6 +76,18 @@ public class DetalhePessoaJuridica implements Serializable {
 	
 	@Column(name = "NM_GRUPO_ECONOMICO")
 	private String nmGrupoEconomico;
+	
+	@Column(name = "NM_ATIVIDADE_PRINCIPAL")
+	private String nmAtividadePrincipal;
+	
+	@Column(name = "NM_SEDE_FORO")
+	private String nmSedeForo;
+	
+	@Column(name = "NM_SITIO_ELETRONICO")
+	private String nmSitioEletronico;
+	
+	@Column(name = "NM_CAPITAL_SOCIAL_INTEGRAL")
+	private String nmCapitalSocialIntegral;
 
 	public Long getId() {
 		return id;
@@ -102,12 +105,12 @@ public class DetalhePessoaJuridica implements Serializable {
 		this.nrInscricaoEstadual = nrInscricaoEstadual;
 	}
 
-	public String getSgPostulante() {
-		return sgPostulante;
+	public String getSgPessoaJuridica() {
+		return sgPessoaJuridica;
 	}
 
-	public void setSgPostulante(String sgPostulante) {
-		this.sgPostulante = sgPostulante;
+	public void setSgPessoaJuridica(String sgPessoaJuridica) {
+		this.sgPessoaJuridica = sgPessoaJuridica;
 	}
 
 	public String getTpFormaJuridica() {
@@ -126,20 +129,20 @@ public class DetalhePessoaJuridica implements Serializable {
 		this.dtRegistro = dtRegistro;
 	}
 
-	public BigDecimal getNrPrazoDuracao() {
-		return nrPrazoDuracao;
+	public String getDsPrazoDuracao() {
+		return dsPrazoDuracao;
 	}
 
-	public void setNrPrazoDuracao(BigDecimal nrPrazoDuracao) {
-		this.nrPrazoDuracao = nrPrazoDuracao;
+	public void setDsPrazoDuracao(String dsPrazoDuracao) {
+		this.dsPrazoDuracao = dsPrazoDuracao;
 	}
 
-	public BigDecimal getVlCapitalSocila() {
-		return vlCapitalSocila;
+	public BigDecimal getVlCapitalSocial() {
+		return vlCapitalSocial;
 	}
 
-	public void setVlCapitalSocila(BigDecimal vlCapitalSocila) {
-		this.vlCapitalSocila = vlCapitalSocila;
+	public void setVlCapitalSocial(BigDecimal vlCapitalSocial) {
+		this.vlCapitalSocial = vlCapitalSocial;
 	}
 
 	public Date getDtUltimaAtualizacao() {
@@ -214,12 +217,37 @@ public class DetalhePessoaJuridica implements Serializable {
 		this.nmGrupoEconomico = nmGrupoEconomico;
 	}
 
-	
-	
-	
-	
-	
-	
-	
+	public String getNmAtividadePrincipal() {
+		return nmAtividadePrincipal;
+	}
 
+	public void setNmAtividadePrincipal(String nmAtividadePrincipal) {
+		this.nmAtividadePrincipal = nmAtividadePrincipal;
+	}
+
+	public String getNmSedeForo() {
+		return nmSedeForo;
+	}
+
+	public void setNmSedeForo(String nmSedeForo) {
+		this.nmSedeForo = nmSedeForo;
+	}
+
+	public String getNmSitioEletronico() {
+		return nmSitioEletronico;
+	}
+
+	public void setNmSitioEletronico(String nmSitioEletronico) {
+		this.nmSitioEletronico = nmSitioEletronico;
+	}
+
+	public String getNmCapitalSocialIntegral() {
+		return nmCapitalSocialIntegral;
+	}
+
+	public void setNmCapitalSocialIntegral(String nmCapitalSocialIntegral) {
+		this.nmCapitalSocialIntegral = nmCapitalSocialIntegral;
+	}
+
+		
 }

@@ -16,20 +16,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import br.gov.transportes.scp.model.DetalhePessoaJuridica;
-import br.gov.transportes.scp.repository.detalhepessoajuridica.interfaces.DetalhePessoaJuridicaInterRepository;
+import br.gov.transportes.scp.repository.detalhepessoajuridica.interfaces.DetalhePessoaJuridicaRepository;
 
 @RestController
 @RequestMapping("/detalhePessoaJuridica")
 public class DetalhePessoaJuridicaResource {
 	
 	@Autowired
-	private DetalhePessoaJuridicaInterRepository detalhePessoaJuridicaInterRepository; 
+	private DetalhePessoaJuridicaRepository detalhePessoaJuridicaRepository; 
 	
 	@PostMapping
 	@PermitAll
 	public ResponseEntity<DetalhePessoaJuridica> salvar( @RequestBody DetalhePessoaJuridica detalhePessoaJuridica, HttpServletResponse response ) {
 		
-		DetalhePessoaJuridica detalhePessoaJuridicaSalva = detalhePessoaJuridicaInterRepository.saveAndFlush(detalhePessoaJuridica);
+		DetalhePessoaJuridica detalhePessoaJuridicaSalva = detalhePessoaJuridicaRepository.saveAndFlush(detalhePessoaJuridica);
 		URI uri =  ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}").buildAndExpand(detalhePessoaJuridicaSalva.getId()).toUri();
 		return ResponseEntity.created(uri).body(detalhePessoaJuridicaSalva);
 	}
@@ -38,7 +38,7 @@ public class DetalhePessoaJuridicaResource {
 	@GetMapping("/{id}")
 	@PermitAll
 	public Optional<DetalhePessoaJuridica> buscarPorId (@PathVariable Long id) {
-		return detalhePessoaJuridicaInterRepository.findById(id);
+		return detalhePessoaJuridicaRepository.findById(id);
 	}
 	
 }

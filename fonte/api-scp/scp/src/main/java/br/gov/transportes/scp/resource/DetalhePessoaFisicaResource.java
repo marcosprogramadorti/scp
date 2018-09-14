@@ -17,20 +17,20 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.gov.transportes.scp.model.DetalhePessoaFisica;
-import br.gov.transportes.scp.repository.detalhepessoafisica.interfaces.DetalhePessoaFisicaInterRepository;
+import br.gov.transportes.scp.repository.detalhepessoafisica.interfaces.DetalhePessoaFisicaRepository;
 
 @RestController
 @RequestMapping("/detalhePessoaFisica")
 public class DetalhePessoaFisicaResource {
 	
 	@Autowired
-	private DetalhePessoaFisicaInterRepository detalhePessoaFisicaInterRepository; 
+	private DetalhePessoaFisicaRepository detalhePessoaFisicaRepository; 
 	
 	@PostMapping
 	@PermitAll
 	public ResponseEntity<DetalhePessoaFisica> salvar( @RequestBody DetalhePessoaFisica detalhePessoaFisica, HttpServletResponse response ) {
 		
-		DetalhePessoaFisica detalhePessoaFisicaSalva = detalhePessoaFisicaInterRepository.saveAndFlush(detalhePessoaFisica);
+		DetalhePessoaFisica detalhePessoaFisicaSalva = detalhePessoaFisicaRepository.saveAndFlush(detalhePessoaFisica);
 		URI uri =  ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}").buildAndExpand(detalhePessoaFisicaSalva.getId()).toUri();
 		return ResponseEntity.created(uri).body(detalhePessoaFisicaSalva);
 	}
@@ -39,7 +39,19 @@ public class DetalhePessoaFisicaResource {
 	@GetMapping("/{id}")
 	@PermitAll
 	public Optional<DetalhePessoaFisica> buscarPorId (@PathVariable Long id) {
-		return detalhePessoaFisicaInterRepository.findById(id);
+		return detalhePessoaFisicaRepository.findById(id);
+	}
+	@GetMapping()
+	@PermitAll
+	public ResponseEntity<DetalhePessoaFisica> buscaPorCPF (String cpf) {
+		
+		DetalhePessoaFisica detalhePessoaFisica =  detalhePessoaFisicaRepository.buscaPorCPF(cpf);
+		
+		if (detalhePessoaFisica == null) {
+			return  ResponseEntity.notFound().build();
+		}
+		return ResponseEntity.ok(detalhePessoaFisica);
+		
 	}
 	
 }

@@ -51,6 +51,8 @@ public class ExperienciaProfissional implements Serializable {
 	private Date dtFimCargo;
 	
 	
+	
+	
 //	@JsonIgnore
 //	@ManyToOne()
 //	@JoinColumn(name = "ID_PESSOA", insertable=false, updatable=false)
