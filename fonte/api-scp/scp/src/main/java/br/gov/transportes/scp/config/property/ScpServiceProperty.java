@@ -14,6 +14,11 @@ public class ScpServiceProperty {
 	
 	private String urlScaService ="";
 	
+	private String urlScaLogout = "";
+	private String urlScaApi = "";
+	
+	
+	
 	
 
 
@@ -78,6 +83,29 @@ public class ScpServiceProperty {
 		
 		
 	}
+	public String getUrlScaLogout() {
+		return urlScaLogout;
+	}
+
+
+	public void setUrlScaLogout(String urlScaLogout) {
+		this.urlScaLogout = urlScaLogout;
+	}
+
+
+	public String getUrlScaApi() {
+		return urlScaApi;
+	}
+
+
+	public void setUrlScaApi(String urlScaApi) {
+		this.urlScaApi = urlScaApi;
+	}
+	
+	
+
+	
+	
 	
 	
 	

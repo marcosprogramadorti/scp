@@ -12,6 +12,8 @@ public class PessoaFisicaTO {
 	private String stNomeMae;
 	private PessoaTO pessoa;
 	private String dsCargo;
+	private Long idUfNaturalidade;
+	private String tpEstadoCivil;
 	
 	public Long getId() {
 		return id;
@@ -60,6 +62,18 @@ public class PessoaFisicaTO {
 	}
 	public void setDsCargo(String dsCargo) {
 		this.dsCargo = dsCargo;
+	}
+	public Long getIdUfNaturalidade() {
+		return idUfNaturalidade;
+	}
+	public void setIdUfNaturalidade(Long idUfNaturalidade) {
+		this.idUfNaturalidade = idUfNaturalidade;
+	}
+	public String getTpEstadoCivil() {
+		return tpEstadoCivil;
+	}
+	public void setTpEstadoCivil(String tpEstadoCivil) {
+		this.tpEstadoCivil = tpEstadoCivil;
 	}
 	
 	

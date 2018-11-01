@@ -38,7 +38,7 @@ public class PessoaFisica implements Serializable {
 	private Long id;
 	
 	@Column(name = "NR_CPF")
-	private Long nrCpf;
+	private String nrCpf;
 
 	public Long getId() {
 		return id;
@@ -48,11 +48,11 @@ public class PessoaFisica implements Serializable {
 		this.id = id;
 	}
 
-	public Long getNrCpf() {
+	public String getNrCpf() {
 		return nrCpf;
 	}
 
-	public void setNrCpf(Long nrCpf) {
+	public void setNrCpf(String nrCpf) {
 		this.nrCpf = nrCpf;
 	}
 	

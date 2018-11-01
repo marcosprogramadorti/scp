@@ -10,7 +10,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import javax.persistence.Id;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
 
 import javax.persistence.Table;
@@ -88,6 +90,11 @@ public class DetalhePessoaJuridica implements Serializable {
 	
 	@Column(name = "NM_CAPITAL_SOCIAL_INTEGRAL")
 	private String nmCapitalSocialIntegral;
+	
+	
+	@ManyToOne (cascade= CascadeType.ALL)
+	@JoinColumn(name="ID_TIPO_EMPRESA")
+	private TipoEmpresa tipoEmpresa;
 
 	public Long getId() {
 		return id;
@@ -248,6 +255,16 @@ public class DetalhePessoaJuridica implements Serializable {
 	public void setNmCapitalSocialIntegral(String nmCapitalSocialIntegral) {
 		this.nmCapitalSocialIntegral = nmCapitalSocialIntegral;
 	}
+
+	public TipoEmpresa getTipoEmpresa() {
+		return tipoEmpresa;
+	}
+
+	public void setTipoEmpresa(TipoEmpresa tipoEmpresa) {
+		this.tipoEmpresa = tipoEmpresa;
+	}
+	
+	
 
 		
 }

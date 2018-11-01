@@ -54,7 +54,8 @@ public abstract class GatewayConfigurerAdapter extends WebSecurityConfigurerAdap
 
     protected String service  = "http://localhost:8080/login/cas";
     
-    protected String serviceHome = "http://localhost:8080/";
+    
+    protected String serviceHome = "http://localhost:8080";
     
     protected String serviceLogin = "https://sso.dev.mt.transportes.gov.br/sso/login";
 
@@ -62,7 +63,7 @@ public abstract class GatewayConfigurerAdapter extends WebSecurityConfigurerAdap
     
     protected String casUrlPrefix = "https://sso.dev.mt.transportes.gov.br/sso";    
     
-    protected String redirectAfterLogin = "http://localhost:8080/exemplo";
+    protected String redirectAfterLogin = "http://localhost:4200/scp";
     
  
     @Autowired

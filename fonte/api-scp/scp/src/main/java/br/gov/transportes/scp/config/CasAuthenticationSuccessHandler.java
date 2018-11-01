@@ -47,7 +47,7 @@ public class CasAuthenticationSuccessHandler implements AuthenticationSuccessHan
             tokenProvider.init();
             String token = tokenProvider.createToken(authentication, true);
             response.setHeader(JWTConfigurer.AUTHORIZATION_HEADER, "Bearer " + token);
-            redirectStrategy.sendRedirect(request, response, redirectAfterLogin + "/" + ticket + "/" + token);
+            redirectStrategy.sendRedirect(request, response, redirectAfterLogin + "/"  + token);
         }
     }
 }

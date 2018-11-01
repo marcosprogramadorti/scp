@@ -36,15 +36,21 @@ public class Pessoa implements Serializable {
 	@JoinColumn(name="ID_PESSOA")
 	private PessoaFisica pessoaFisica;
 	
-	@JsonIgnore
 	@OneToOne()
 	@JoinColumn(name="ID_PESSOA")
 	private PessoaJuridica pessoaJuridica;
 	
 	@JsonIgnore
-	@OneToOne()
+	@OneToOne
 	@JoinColumn(name="ID_PESSOA")
 	private DetalhePessoaFisica detalhePessoaFisica;
+	
+	@JsonIgnore
+	@OneToOne
+	@JoinColumn(name="ID_PESSOA")
+	private DetalhePessoaJuridica detalhePessoaJuridica;
+	
+	
 	
 	@Column(name="TP_PESSOA")
 	private String tpPessoa;
@@ -81,14 +87,6 @@ public class Pessoa implements Serializable {
 		this.pessoaJuridica = pessoaJuridica;
 	}
 
-	public DetalhePessoaFisica getDetalhePessoaFisica() {
-		return detalhePessoaFisica;
-	}
-
-	public void setDetalhePessoaFisica(DetalhePessoaFisica detalhePessoaFisica) {
-		this.detalhePessoaFisica = detalhePessoaFisica;
-	}
-
 	public String getTpPessoa() {
 		return tpPessoa;
 	}
@@ -97,6 +95,24 @@ public class Pessoa implements Serializable {
 		this.tpPessoa = tpPessoa;
 	}
 
+	public DetalhePessoaFisica getDetalhePessoaFisica() {
+		return detalhePessoaFisica;
+	}
+
+	public void setDetalhePessoaFisica(DetalhePessoaFisica detalhePessoaFisica) {
+		this.detalhePessoaFisica = detalhePessoaFisica;
+	}
+
+	public DetalhePessoaJuridica getDetalhePessoaJuridica() {
+		return detalhePessoaJuridica;
+	}
+
+	public void setDetalhePessoaJuridica(DetalhePessoaJuridica detalhePessoaJuridica) {
+		this.detalhePessoaJuridica = detalhePessoaJuridica;
+	}
+
+	
+	
 	
 
 	

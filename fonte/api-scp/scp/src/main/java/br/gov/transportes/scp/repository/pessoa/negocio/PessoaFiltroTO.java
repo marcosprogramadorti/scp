@@ -5,6 +5,7 @@ public class PessoaFiltroTO {
 	String nrCpf;
 	String nrCnpj;
 	String nmPessoa;
+	String nmRazaoSocial;
 	String tpPessoa;
 	String stAtivo;
 	
@@ -29,6 +30,12 @@ public class PessoaFiltroTO {
 	}
 	public String getTpPessoa() {
 		return tpPessoa;
+	}
+	public String getNmRazaoSocial() {
+		return nmRazaoSocial;
+	}
+	public void setNmRazaoSocial(String nmRazaoSocial) {
+		this.nmRazaoSocial = nmRazaoSocial;
 	}
 	public void setTpPessoa(String tpPessoa) {
 		this.tpPessoa = tpPessoa;

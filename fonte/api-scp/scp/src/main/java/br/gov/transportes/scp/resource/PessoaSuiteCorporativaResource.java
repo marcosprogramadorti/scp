@@ -1,7 +1,6 @@
 package br.gov.transportes.scp.resource;
 
 import java.net.URI;
-import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,16 +13,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import br.gov.transportes.scp.model.SolicitacaoAcessoArquivo;
 import br.gov.transportes.scp.repository.pessoasuitecorporativa.negocio.PessoaSuiteCorporativaNegocio;
+import br.gov.transportes.scp.repository.pessoasuitecorporativa.negocio.to.ArquivoTO;
 import br.gov.transportes.scp.repository.pessoasuitecorporativa.negocio.to.PessoaTO;
 import br.gov.transportes.scp.repository.pessoasuitecorporativa.negocio.to.UfTO;
 
 @RestController
 @RequestMapping("/suiteCorporativa")
-public class PessoaSuiteCorporativaResource {
+public class PessoaSuiteCorporativaResource{
 	
 	@Autowired
 	PessoaSuiteCorporativaNegocio pessoaSuiteCorporativaNegocio;
@@ -51,6 +55,23 @@ public class PessoaSuiteCorporativaResource {
 	}
 	
 	
+	@GetMapping("pessoas/{id}")
+	public ResponseEntity<Object> buscarPorId(@PathVariable("id")  Long id)  {
+		
+		
+		ResponseEntity<Object> responseEntity  = pessoaSuiteCorporativaNegocio.buscarPorId(id);
+		
+		Object lista = responseEntity.getBody();
+		MediaType contentType = responseEntity.getHeaders().getContentType();
+		HttpStatus statusCode = responseEntity.getStatusCode();
+		
+		if (lista == null) {
+			return  ResponseEntity.notFound().build();
+		}
+		
+		return ResponseEntity.ok(lista); 
+	}
+	
 	@GetMapping("pessoas/buscarPessoaPorCpf/{cpf}")
 	public ResponseEntity<Object> buscarPessoaPorCpf(@PathVariable("cpf")  String cpf)  {
 		
@@ -67,6 +88,39 @@ public class PessoaSuiteCorporativaResource {
 		
 		return ResponseEntity.ok(lista); 
 	}
+	@GetMapping("pessoas/buscarPessoaPorCpfInfoconv/{cpf}/{tipoVinculo}")
+	public ResponseEntity<Object> buscarPessoaPorCpfInfoconv(@PathVariable("cpf")  String cpf, @PathVariable("tipoVinculo")String tipoVinculo)  {
+		
+		
+		ResponseEntity<Object> responseEntity  = pessoaSuiteCorporativaNegocio.buscarPessoaPorCpfInfoconv(cpf, tipoVinculo);
+		
+		Object lista = responseEntity.getBody();
+		MediaType contentType = responseEntity.getHeaders().getContentType();
+		HttpStatus statusCode = responseEntity.getStatusCode();
+		
+		if (lista == null) {
+			return  ResponseEntity.notFound().build();
+		}
+		
+		return ResponseEntity.ok(lista); 
+	}
+	@GetMapping("pessoas/buscarPessoaPorCnpjInfoconv/{cnpj}/{tipoVinculo}")
+	public ResponseEntity<Object> buscarPessoaPorCnpjInfoconv(@PathVariable("cnpj")  String cnpj, @PathVariable("tipoVinculo")String tipoVinculo)  {
+		
+		
+		ResponseEntity<Object> responseEntity  = pessoaSuiteCorporativaNegocio.buscarPessoaPorCnpjInfoconv(cnpj, tipoVinculo);
+		
+		Object lista = responseEntity.getBody();
+		MediaType contentType = responseEntity.getHeaders().getContentType();
+		HttpStatus statusCode = responseEntity.getStatusCode();
+		
+		if (lista == null) {
+			return  ResponseEntity.notFound().build();
+		}
+		
+		return ResponseEntity.ok(lista); 
+	}
+	
 	@GetMapping("pessoas/buscarPessoaPorCnpj/{cnpj}")
 	public ResponseEntity<Object> buscarPessoaPorCnpj(@PathVariable("cnpj")  String cnpj)  {
 		
@@ -173,6 +227,17 @@ public class PessoaSuiteCorporativaResource {
 	}
 	
 	
-	
+	@PostMapping(value = "arquivos/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	public ResponseEntity<ArquivoTO> uploadArquivo(@RequestPart("file") MultipartFile file,
+			@RequestPart("arquivoTO") ArquivoTO solicitacaoAcessoAnexo) {
+//		return null;
+		ArquivoTO arquivoSalvo = pessoaSuiteCorporativaNegocio.uploadArquivo(file, solicitacaoAcessoAnexo);
+		
+		if (arquivoSalvo == null) {
+			return  ResponseEntity.unprocessableEntity().build();
+		}
+		
+		return ResponseEntity.ok(arquivoSalvo);
+	}
 
 }
